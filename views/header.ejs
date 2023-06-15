@@ -1,0 +1,40 @@
+<header>
+  <div class="container">
+    <div class="headercontainer">
+      <div class="logo">
+        <a href="/"><img src="./img/logo.png" alt="#" srcset="" /></a>
+        <div class="dropdown">
+          <span class="dropdown-toggle">Алматы</span>
+          <ul class="dropdown-menu">
+            <li>Астана</li>
+            <li>Алматы</li>
+            <li>Семей</li>
+            <li>Атырау</li>
+          </ul>
+        </div>
+      </div>
+      <ul class="headl">
+        <li>Для дилеров</li>
+        <li>
+          <button class="q1"><a href="#">Стать партнером</a></button>
+        </li>
+        <li>|</li>
+        <li><a href="tel:+77473081268">+7(747) 000-00-00</a></li>
+
+        <li>|</li>
+        <li>
+          <% if(session.isAuthenticated) { %>
+          <a href="/logout">Выход</a>
+          <%} else {%>
+          <button class="q" onclick="Login()">Войти</button>
+          <%} %>
+        </li>
+        <li>
+          <img src="./img/Vector.png" alt="" srcset="" />
+        </li>
+      </ul>
+      <div class="auth"><%- include('./login.ejs') %></div>
+    </div>
+    <div class="reg"><%- include('./register.ejs') %></div>
+  </div>
+</header>
