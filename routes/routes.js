@@ -7,9 +7,11 @@ const logoutRoutes = require('./logoutRoutes');
 const registerRoutes = require('./registerRoutes');
 
 router.use('/', indexRoutes);
-router.use('/dashboard', dashboardRoutes);
-router.use('/login', loginRoutes);
+router.use('/login',loginRoutes)
 router.use('/logout', logoutRoutes);
-router.use('/register', registerRoutes);
+router.use('/register',registerRoutes);
+
+// Добавляем путь "/dashboard" для включения dashboardRoutes
+router.use('/dashboard', dashboardRoutes);
 
 module.exports = router;

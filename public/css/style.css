@@ -168,8 +168,10 @@ header {
   align-items: center;
   justify-content: center;
 }
-.name {
+.name , .name1 {
   margin-bottom: 30px;
+}
+.name1{
   margin-left: 220px;
 }
 
@@ -312,6 +314,18 @@ auth
   font-weight: bold;
   width: 130px;
   margin-left: 220px;
+}
+.all-btn1 {
+  border: 2px solid red;
+  color: red;
+  border-radius: 7px;
+  text-align: center;
+  height: 50px;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  width: 130px;
+  
 }
 .all-btn:hover {
   background-color: #ff0000;

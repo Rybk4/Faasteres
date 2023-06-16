@@ -1,0 +1,45 @@
+<!-- userDashboard.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Личный кабинет</title>
+</head>
+<body>
+    <%- include('./header.ejs') %>
+    <main>
+        <h1>Welcome to Your Dashboard, <%= user.username %></h1>
+        <h2>User Details</h2>
+        <p>Nickname: <%= userDetails.nickname %></p>
+        <p>About: <%= userDetails.about %></p>
+        <% if (userDetails.avatarUrl) { %>
+            <img src="<%= userDetails.avatarUrl %>" alt="Avatar">
+           
+        <% } else { %>
+            <p>No avatar available</p>
+        <% } %>
+    
+        <h2>Add User Data</h2>
+        <form action="/dashboard/add-data" method="POST" enctype="multipart/form-data">
+            <label for="nickname">Nickname:</label>
+            <input type="text" name="nickname" id="nickname" required>
+          
+            <label for="about">About:</label>
+            <textarea name="about" id="about" rows="5" required></textarea>
+          
+            <label for="avatar">Avatar:</label>
+            <input type="file" name="avatar" id="avatar">
+          
+            <button type="submit">Add Data</button>
+          </form>
+    
+        <h2>Delete User Data</h2>
+        <form action="/dashboard/delete-data" method="POST">
+            <button type="submit">Delete Data</button>
+        </form>
+    </main>
+    
+</body>
+</html>
